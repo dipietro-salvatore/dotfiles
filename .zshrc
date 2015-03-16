@@ -1,15 +1,13 @@
-#
-# Executes commands at the start of an interactive session.
-#
-# Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
-#
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.zch_history
+HISTSIZE=1000
+SAVEHIST=1000
+setopt appendhistory
+bindkey -e
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/diego/.zshrc'
 
-# Source Prezto.
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-fi
-
-# Customize to your needs...
-
-for config_file ($HOME/.yadr/zsh/*.zsh) source $config_file
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
