@@ -18,6 +18,7 @@ set showmode                    "Show current mode down the bottom
 set gcr=a:blinkon0              "Disable cursor blink
 set visualbell                  "No sounds
 set autoread                    "Reload files changed outside vim
+set t_Co=256              			"256 colors
 
 " This makes vim act like all other editors, buffers can
 " exist in the background without being in a window.
@@ -110,4 +111,7 @@ set ignorecase      " Ignore case when searching...
 set smartcase       " ...unless we type a capital
 
 " ================ Custom Settings ========================
-so ~/.yadr/vim/settings.vim
+"so ~/.yadr/vim/settings.vim
+
+:let g:session_autoload = 'no'
+

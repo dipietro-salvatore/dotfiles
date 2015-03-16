@@ -1,5 +1,8 @@
 # set your user tokens as environment variables, such as ~/.secrets
 # See the README for examples.
+[user]
+  email = dipietro.salvatore@gmail.com 
+  name = Salvatore Dipietro
 [color]
   ui = true
 [color "branch"]
@@ -123,5 +126,3 @@
   # Remember my merges
   # http://gitfu.wordpress.com/2008/04/20/git-rerere-rereremember-what-you-did-last-time/
   enabled = true
-[include]
-  path = .gitconfig.user
