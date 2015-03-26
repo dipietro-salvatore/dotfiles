@@ -25,6 +25,8 @@ set t_Co=256              			"256 colors
 " http://items.sjbach.com/319/configuring-vim-right
 set hidden
 
+let g:solarized_termcolors=256
+
 "turn on syntax highlighting
 syntax on
 
@@ -42,6 +44,9 @@ if filereadable(expand("~/.vim/vundles.vim"))
 endif
 
 " ================ Turn Off Swap Files ==============
+
+" Store swapfiles in a single directory.
+set directory=~/.vim/swap,~/tmp,/var/tmp/,tmp
 
 set noswapfile
 set nobackup
@@ -114,4 +119,16 @@ set smartcase       " ...unless we type a capital
 "so ~/.yadr/vim/settings.vim
 
 :let g:session_autoload = 'no'
+
+
+
+if has('gui_running')
+      set background=light
+else
+      set background=dark
+endif
+
+syntax enable
+colorscheme solarized
+
 
