@@ -112,7 +112,7 @@ ${font Play:normal:size=8}${goto 300}${voffset 1}Public IP${goto 370}${execi 360
 
 # |--ETH0
 ${else}${if_existing /proc/net/route eth1}${font Play:normal:size=7}${color1}${goto 298}${voffset 6}Up${goto 370}${color1}${totalup eth1} / ${color1}${upspeed eth1}
-${font Play:normal:size=7}${goto 298}${color1}Down${goto 370}${color1}${totaldown eth0} / ${color1}${downspeed eth0}
+${font Play:normal:size=7}${goto 298}${color1}Down${goto 370}${color1}${totaldown eth1} / ${color1}${downspeed eth1}
 ${font Play:normal:size=8}${goto 300}${voffset 2}Local IP${goto 370}${addr eth1}
 ${font Play:normal:size=8}${goto 300}${voffset 1}Public IP${goto 370}${execi 3600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
 %${endif}
