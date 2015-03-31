@@ -11,6 +11,13 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-git'
+"Plugin 'gregsexton/gitv'
+Plugin 'mattn/gist-vim'
+Plugin 'scrooloose/nerdtree.git'
+"Plugin 'jistr/vim-nerdtree-tabs.git'
+Plugin 'Valloric/YouCompleteMe'
+
 
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
@@ -28,6 +35,11 @@ Plugin 'tpope/vim-fugitive'
 " " Avoid a name conflict with L9
 " Plugin 'user/L9', {'name': 'newL9'}
 "
+
+if filereadable(expand("~/.vim/vim_plugins.list"))
+  source ~/.vim/vim_plugins.list
+endif
+
 " " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
