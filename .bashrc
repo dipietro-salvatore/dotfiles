@@ -91,6 +91,7 @@ fi
 alias ll='ls -la'
 #alias la='ls -A'
 #alias l='ls -CF'
+alias iptables='iptables -L -t nat'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

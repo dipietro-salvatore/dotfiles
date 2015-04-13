@@ -5,5 +5,5 @@ Terminal=false
 Type=Application
 Name=WhatsApp Web
 Exec=/opt/google/chrome/google-chrome --app=https://web.whatsapp.com/
-Icon=chrome-https___web.whatsapp.com_
+Icon=web.whatsapp.com
 StartupWMClass=web.whatsapp.com

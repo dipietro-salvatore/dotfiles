@@ -5,5 +5,5 @@ Terminal=false
 Type=Application
 Name=Telegram Web
 Exec=/opt/google/chrome/google-chrome "--app=https://web.telegram.org/#/im"
-Icon=chrome-https___web.telegram.org_#_im
+Icon=web.telegram.org
 StartupWMClass=web.telegram.org
