@@ -19,6 +19,13 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'Valloric/YouCompleteMe'
 
 
+" C developer plugins
+Plugin 'mbbill/code_complete'
+Plugin 'thisivan/vim-taglist'
+Plugin 'ctags.vim'
+Plugin 'brookhong/cscope.vim'
+
+
 " " The following are examples of different formats supported.
 " " Keep Plugin commands between vundle#begin/end.
 " " plugin on GitHub repo
