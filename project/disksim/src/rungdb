@@ -1,0 +1,1 @@
+gdb -tui --args ./disksim ../valid/3disks.parv ../valid/3disks.outv ascii 0 1
