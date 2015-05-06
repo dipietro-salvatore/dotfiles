@@ -79,7 +79,7 @@ export ARCHFLAGS="-arch x86_64"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-~/.bash_aliases, instead of adding them here directly.
+# ~/.bash_aliases, instead of adding them here directly.
 if [ -f ~/.bash_aliases ]; then
      source ~/.bash_aliases
 fi
