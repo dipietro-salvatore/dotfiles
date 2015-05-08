@@ -1,7 +1,0 @@
-#!/bin/sh
-disksim config.parv result.outv ascii ascii.trace 0 \
-&& grep "IOdriver Response time average" result.outv\
-
-
-
-
