@@ -11,5 +11,5 @@ alias la='ls -A'
 alias l='ls -CF'
 alias iptables='iptables -L -t nat'
 alias rsync='rsync -avz --progress'
-alias rdesktop-vrdp='rdesktop-vrdp -r clipboard:PRIMARYCLIPBOARD -N -z'
+alias rdesktop-vrdp='rdesktop-vrdp -r clipboard:PRIMARYCLIPBOARD  -z'
 
