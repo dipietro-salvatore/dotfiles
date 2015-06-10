@@ -1,0 +1,3 @@
+#vboxmanage startvm DiskSim --type headless
+vboxmanage startvm wLinks --type headless
+vboxmanage startvm Links --type headless
