@@ -1,2 +1,2 @@
-vboxmanager controlvm wLinks savestate
-vboxmanager controlvm Links savestate
+vboxmanage controlvm wLinks savestate
+vboxmanage controlvm Links savestate
