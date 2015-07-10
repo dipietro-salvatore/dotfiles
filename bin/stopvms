@@ -1,0 +1,3 @@
+#vboxmanage controlvm DiskSim poweroff
+vboxmanage controlvm wLinks poweroff
+vboxmanage controlvm Links poweroff

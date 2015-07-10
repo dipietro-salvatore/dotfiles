@@ -1,0 +1,9 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Version=1.0
+Terminal=false
+Type=Application
+Name=Twitter
+Exec=/opt/google/chrome/google-chrome --app=https://twitter.com/
+Icon=chrome-https___twitter.com_
+StartupWMClass=twitter.com
