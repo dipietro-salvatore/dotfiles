@@ -1,4 +1,4 @@
-# Conky settings #
+# -- Conky settings -- #
 background no
 update_interval 1
 
@@ -6,130 +6,120 @@ cpu_avg_samples 2
 net_avg_samples 2
 
 override_utf8_locale yes
-
+short_units yes
 double_buffer yes
 no_buffers yes
 
 text_buffer_size 2048
-#imlib_cache_size 0
+imlib_cache_size 0
 
-temperature_unit celsius
-
-# Window specifications #
-own_window_class Conky
+own_window_argb_visual true
+own_window_argb_value 0
+own_window_type desktop
 own_window yes
-own_window_type conky
 own_window_transparent yes
-own_window_hints undecorate,sticky,skip_taskbar,skip_pager,below
-own_window_argb_visual yes
-own_window_argb_value 200
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
 
 border_inner_margin 0
 border_outer_margin 0
 
-minimum_size 520 600
-maximum_width 520
+minimum_size 1366 768
+alignment tl
+gap_x 50
+gap_y 70
 
-alignment tr
-gap_x -20
-gap_y 100 
-
-# Graphics settings #
+# -- Graphics settings -- #
 draw_shades no
 draw_outline no
+default_color cccccc
 draw_borders no
 draw_graph_borders no
-
-default_color gray
-default_shade_color red
-default_outline_color green
-
-# Text settings #
 use_xft yes
-override_utf8_locale yes
-xftfont Play:normal:size=7
-xftalpha 0.9
-uppercase no
+xftfont Aller:Bold:size=10
+xftalpha 0.5
 
-default_color 333333
-color0 414569
-color1 333333
-color2 1994D1
-#color3 1994D1 
 
-# Lua Load  ##${voffset 750}
-#lua_load ~/conky/rings-v1.2.1.lua
-lua_load ~/conky/rings-v1.3.1.lua
-#lua_draw_hook_pre ring_stats
-lua_draw_hook_pre conky_main
 
+# -- Lua load -- #
+lua_load ~/.conky/MConky/.lua.lua 
+
+lua_draw_hook_pre ring_stats
+lua_draw_hook_post start
+
+#at least one line (empty or not) after TEXT
 TEXT
+${goto 348}${voffset 45}${font Ubuntu:style=Bold:size=8}CPU${font} 
+${goto 344}${voffset 4}${font Ubuntu:style=Bold:size=8}MEM${font} 
+${goto 341}${voffset -5}${font Ubuntu:style=Bold:size=8}SWAP${font} 
+${goto 357}${voffset 2}${font Ubuntu:style=Bold:size=8}UP${font} 
+${goto 338}${voffset -5}${font Ubuntu:style=Bold:size=8}DOWN${font} 
+${goto 341}${voffset 4}${font Ubuntu:style=Bold:size=8}ROOT${font} 
+${goto 340}${voffset -6}${font Ubuntu:style=Bold:size=8}HOME${font} 
+${goto 350}${voffset -4}${font Ubuntu:style=Bold:size=8}WIN${font} 
+${goto 340}${voffset -6}${font Ubuntu:style=Bold:size=8}DATA${font} 
+${goto 520}${voffset 262}${font Ubuntu:style=Bold:size=20}0${font} 
+${goto 500}${voffset -12}${font Ubuntu:style=Bold:size=20}1${font}
+${goto 475}${voffset -10}${font Ubuntu:style=Bold:size=20}2${font}
+${goto 450}${voffset -17}${font Ubuntu:style=Bold:size=20}3${font}
+${goto 425}${voffset -18}${font Ubuntu:style=Bold:size=20}4${font}
+${goto 395}${voffset -24}${font Ubuntu:style=Bold:size=20}5${font}
+${goto 367}${voffset -26}${font Ubuntu:style=Bold:size=20}6${font}
+${goto 337}${voffset -30}${font Ubuntu:style=Bold:size=20}7${font}
+${goto 309}${voffset -33}${font Ubuntu:style=Bold:size=20}8${font}
+${goto 282}${voffset -35}${font Ubuntu:style=Bold:size=20}9${font}
+${goto 258}${voffset -42}${font Ubuntu:style=Bold:size=20}A${font}
+${goto 235}${voffset -41}${font Ubuntu:style=Bold:size=20}B${font}
+${goto 215}${voffset -43}${font Ubuntu:style=Bold:size=20}C${font}
 
-${goto 324}${voffset 10}${font Play:normal:size=7}${color1}${top name 1}${alignr 40}${top cpu 1}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 2}${alignr 306}${alignr 40}${top cpu 1}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 3}${alignr 306}${alignr 40}${top cpu 2}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 4}${alignr 306}${alignr 40}${top cpu 2}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 5}${alignr 306}${alignr 40}${top cpu 3}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 6}${alignr 306}${alignr 40}${top cpu 3}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 7}${alignr 306}${alignr 40}${top cpu 4}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 8}${alignr 306}${alignr 40}${top cpu 4}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 9}${alignr 306}${alignr 40}${top cpu 5}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 10}${alignr 306}${alignr 40}${top cpu 6}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 11}${alignr 306}${alignr 40}${top cpu 7}%
-${goto 324}${font Play:normal:size=7}${color1}${top name 12}${alignr 306}${alignr 40}${top cpu 8}%
 
-${font Play:normal:size=7}${voffset -130}${color1}${goto 120}${freq_g cpu0} Ghz${alignr 330}${acpitemp} °C
-${font Play:normal:size=7}${voffset 0}${goto 120}${color1}CPU 1 ${alignr 330}${color1}${cpu cpu0}%
-${font Play:normal:size=7}${voffset 2}${goto 120}${color1}CPU 2${alignr 330}${color1}${cpu cpu1}%
-${font Play:normal:size=7}${voffset 2}${goto 120}${color1}CPU 3${alignr 330}${color1}${cpu cpu2}%
-${font Play:normal:size=7}${voffset 2}${goto 120}${color1}CPU 4${alignr 330}${color1}${cpu cpu3}%
-${font Play:normal:size=5}${voffset 0}${goto 120}${color1}CPU 5${alignr 330}${color1}${cpu cpu4}%
-${font Play:normal:size=5}${voffset 2}${goto 120}${color1}CPU 6${alignr 330}${color1}${cpu cpu5}%
-${font Play:normal:size=5}${voffset 2}${goto 120}${color1}CPU 7${alignr 330}${color1}${cpu cpu6}%
-${font Play:normal:size=5}${voffset 2}${goto 120}${color1}CPU 8${alignr 330}${color1}${cpu cpu7}%
-${font Michroma:size=10}${color0}${goto 80}${voffset 4}CPU 
+${goto 85}${voffset -400}${font Ubuntu:size=20}${color grey}$sysname${font} $kernel${font Ubuntu:size=10} 
+${goto 105}${color grey}on a $machine machine${font}
+${goto 150}${font Ubuntu:size=20}${color grey}$nodename${font}
 
-${font Michroma:size=10}${color0}${goto 394}${voffset 44}MEMORY
-${goto 324}${voffset -6}${font Play:normal:size=7}${color1}${top_mem name 1}${alignr 40}${top_mem mem 1}%
-${goto 324}${font Play:normal:size=7}${color1}${top_mem name 2}${alignr 40}${top_mem mem 2}%
-${goto 324}${font Play:normal:size=7}${color1}${top_mem name 3}${alignr 40}${top_mem mem 3}%
-${goto 324}${font Play:normal:size=7}${color1}${top_mem name 4}${alignr 40}${top_mem mem 4}%
-${font Play:normal:size=7}${voffset 14}${goto 348}${color1}SWAP${alignr 40}${color1}${swap} / ${color1}${swapmax}
-${font Play:normal:size=7}${voffset 4}${goto 348}${color1}RAM ${alignr 40}${color1}${mem} / ${color1}${memmax}
 
-${font Play:normal:size=7}${goto 80}${voffset -76}Root${color1}${alignr 310}${fs_used /} / ${fs_size /}
-${font Play:normal:size=7}${goto 80}${voffset 0}Home${alignr 310}${color1}${fs_used /home} / ${fs_size /home}
-${font Play:normal:size=7}${goto 80}${voffset 0}Usr${alignr 310}${color1}${fs_used /usr} / ${fs_size /usr}
-${font Michroma:size=10}${color0}${goto 66}${voffset 10}HARD  DRIVE
+${goto 585}${voffset -100}Uptime: $uptime
+${goto 600}Battery at ${battery_percent BAT1}%
 
-${font Michroma:size=10}${color0}${voffset 20}${goto 324}INTERNET  INFO
-# EDITION FINIR WLAN
-${if_existing /proc/net/route wlan0}${font Play:normal:size=7}${color1}${alignr 54}${voffset -8}WiFi  ${color1}${wireless_essid wlan0}
-${font Play:normal:size=7}${voffset 6}${color1}${goto 298}${voffset 2}Up${goto 370}${color1}${totalup wlan0} / ${color1}${upspeed wlan0}
-${font Play:normal:size=7}${goto 298}${color1}Down${goto 370}${color1}${totaldown wlan0} / ${color1}${downspeed wlan0}
-${font Play:normal:size=8}${goto 300}${voffset 2}Local IP${goto 370}${addr wlan0}
-${font Play:normal:size=8}${goto 300}${voffset 1}Public IP${goto 370}${execi 3600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
 
-# |--ETH0
-${else}${if_existing /proc/net/route eth1}${font Play:normal:size=7}${color1}${goto 298}${voffset 6}Up${goto 370}${color1}${totalup eth1} / ${color1}${upspeed eth1}
-${font Play:normal:size=7}${goto 298}${color1}Down${goto 370}${color1}${totaldown eth1} / ${color1}${downspeed eth1}
-${font Play:normal:size=8}${goto 300}${voffset 2}Local IP${goto 370}${addr eth1}
-${font Play:normal:size=8}${goto 300}${voffset 1}Public IP${goto 370}${execi 3600 wget -q -O - checkip.dyndns.org | sed -e 's/[^[:digit:]\|.]//g'}
-%${endif}
+${goto 625}${voffset 0}CPUAV: ${cpu cpu0}%
+${GOTO 632}Frequency: ${freq_g}Ghz
+${GOTO 640}Load: $loadavg
+${GOTO 645}Processes: $processes
+${GOTO 647}Temp: ${hwmon 0 temp 1}°C
+${goto 777}${voffset -505}${color #888888}${cpugraph 500, 100 00C9FF 00C9FF}
 
-${else}${font Play:normal:size=7}${color1}${alignr 54}${voffset -8}WiFi
-${font Play:normal:size=7}${voffset 6}${color1}${goto 298}${voffset 2}Up
-${font Play:normal:size=7}${goto 298}${color1}Down
-${font Play:normal:size=8}${goto 300}${voffset 2}Local IP
-${font Play:normal:size=8}${goto 300}${voffset 1}Public IP ${endif}${endif}
+${goto 654}${voffset 0}RAM: ${memperc}%
+${goto 655}Free: ${memeasyfree}
+${goto 655}Used: ${mem}
+${goto 654}SWAP: ${swapperc}%
+${goto 652}Avail: ${swapmax}
+${goto 650}Used: ${swap}
+${goto 923}${voffset -175}${color grey}${font Ubuntu:size=20}${top name 1}${font}${color}
+${goto 926}is using${top cpu 1}% CPU
+${goto 929}and ${top mem_res 1} of RAM
+${goto 930}${voffset 10}${top name 2} ${top cpu 2}%, ${top mem_res 2}
+${goto 930}${top name 3} ${top cpu 3}%, ${top mem_res 3}
+${goto 931}${top name 4} ${top cpu 4}%, ${top mem_res 4}
+${goto 930}${top name 5} ${top cpu 5}%, ${top mem_res 5}
+${goto 930}${top name 6} ${top cpu 6}%, ${top mem_res 6}
 
-${font Michroma:size=9}${alignr 298}${voffset -75}${color0}${time %a} ${color0}${time %x}
-${font Michroma:size=18}${goto 118}${color1}${voffset -4}${time %H}:${time %M}
-${font Michroma:size=8}${color0}${goto 296}${voffset 18}BATTERIE
-${font Play:size=8}${color0}${goto 278}${voffset 4}${color1}${battery_percent BAT0}
+${goto 643}${voffset 35}Up: ${upspeed wlp8s0}
+${goto 636}overall: ${totalup wlp8s0}
+${goto 631}Down: ${downspeed wlp8s0}
+${goto 624}overall: ${totaldown wlp8s0}
+${goto 617}Signal: ${wireless_link_qual wlp8s0}%
+${goto 750}${voffset -93}${color #888888}${upspeedgraph wlp8s0 50,100 00FF00 00FF00}
+${goto 750}${voffset 10}${color #888888}${downspeedgraph wlp8s0 -50,100 1ba1e2 1ba1e2}
 
-${font Play:normal:size=8}${goto 300}${color1}Uptime${goto 370}${color1}${uptime_short}
-${font Michroma:size=11}${color0}${voffset 70}${alignr 130}${pre_exec cat /etc/issue.net}  ${machine}
+${goto 600}${voffset 0}RFree: ${fs_free /}
+${goto 585}HFree: ${fs_free /home}
 
-#${execpi 53 $HOME/conky/nagios.sh}
+${goto 900}${voffset -450}${font Antipasto:pixelsize=75}${time %d}${font}
+${goto 915}${voffset 0}${time  %B}
+${goto 920}${voffset 0}${time %Y}
+${goto 923}${voffset 0}${time %A}
+${goto 927}${voffset 150}${font Antipasto:pixelsize=80}${time %H}Hrs${font}
+${goto 920}${voffset -20}${font Antipasto:pixelsize=80}${time %M}Min${font}
+${goto 905}${voffset -20}${font Antipasto:pixelsize=80}${time %S}Sec${font}
 
+${goto 0}${voffset 50}DMSEG: ${exec dmesg |tail -n 5}

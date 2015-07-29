@@ -43,3 +43,13 @@ Session.vim
 # SASS
 # ----------------------------------------------------------------------------------------------
 .sass-cache
+/NetBeansProjects/Jtest/nbproject/private/
+/NetBeansProjects/Jtest/build/
+/NetBeansProjects/test2/nbproject/private/
+/NetBeansProjects/test2/build/
+/NetBeansProjects/CassandraStorage/nbproject/private/
+/NetBeansProjects/CassandraStorage/build/
+/NetBeansProjects/PartialFactorial/nbproject/private/
+/NetBeansProjects/PartialFactorial/build/
+/NetBeansProjects/FullFactorialDesign/nbproject/private/
+/NetBeansProjects/FullFactorialDesign/build/
