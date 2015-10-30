@@ -1,9 +1,19 @@
 #!/usr/bin/env xdg-open
 [Desktop Entry]
 Version=1.0
-Terminal=false
 Type=Application
-Name=Matlab
-Exec=/usr/local/bin/matlab
 Icon=matlab
-StartupWMClass=matlab
+Name=Matlab
+Comment=Start MATLAB - The Language of Technical Computing
+Exec=matlab -desktop 
+Terminal=false
+Categories=Development;
+StartupNotify=true
+StartupWMClass=sun-awt-X11-XFramePeer
+X-Ayatana-Desktop-Shortcuts=New_Window;
+
+Name[en_US]=MATLAB
+
+[New_Window Shortcut Group]
+Name=start a new MATLAB instance
+Exec=matlab -desktop
