@@ -1,0 +1,10 @@
+#!/bin/sh
+# pdf2jpg extracts images from pdf and saves them in same directory at 300 dpi as booklet-#.jpg
+# i.e. booklet-0.jpg,booklet-1.jpg and so on
+# the numbering is automatic.
+for FILE in "$@" ; do
+OUTFILE=$(dirname "$FILE")/booklet.jpg
+pdftoppm -cropbox "$FILE" "$FILE" ;
+convert "$FILE"*.ppm -density 300 -quality 100% "$OUTFILE" ;
+rm "$FILE"*.ppm
+done

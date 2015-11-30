@@ -1,0 +1,33 @@
+#!/bin/bash
+source $(dirname $0)/config
+
+
+NAME=server
+FILE="$NAME.conf"
+
+EASYRSAPATH/easyrsa3/easyrsa init-pki
+EASYRSAPATH/easyrsa3/easyrsa build-ca
+
+EASYRSAPATH/easyrsa3/easyrsa gen-req $NAME nopass
+EASYRSAPATH/easyrsa3/easyrsa sign server $NAME
+
+openvpn --genkey --secret ta.key
+openssl dhparam -out dh2048.pem 2048
+
+#cp base $FILE 
+
+echo "<cert>" >> $FILE
+sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p'  $EASYRSAPATH/easyrsa3/pki/issued/$NAME.crt >> $FILE
+echo "</cert>" >> $FILE
+
+echo "<key>" >> $FILE
+sed -n '/-----BEGIN PRIVATE KEY-----/,/-----END PRIVATE KEY-----/p'  $EASYRSAPATH/easyrsa3/pki/private/$NAME.key >> $FILE
+echo "</key>" >> $FILE
+
+echo "<ca>" >> $FILE
+sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p'  $EASYRSAPATH/easyrsa3/pki/ca.crt >> $FILE
+echo "</ca>" >> $FILE
+
+echo "<tls-auth>" >> $FILE
+sed -n '/-----BEGIN OpenVPN Static key V1-----/,/-----END OpenVPN Static key V1-----/p'  ta.key >> $FILE
+echo "</tls-auth>" >> $FILE

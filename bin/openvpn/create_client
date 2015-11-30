@@ -1,0 +1,35 @@
+#!/bin/bash
+source $(dirname $0)/config
+
+
+if [ $# -lt 1 ]
+then
+  echo "Runthis script as:" 
+  echo "$0 <client certificate name> " 
+  exit 1
+fi
+
+
+NAME=$1
+FILE="$NAME.conf"
+
+$EASYRSAPATH/easyrsa3/easyrsa gen-req $NAME nopass
+$EASYRSAPATH/easyrsa3/easyrsa sign client $NAME
+
+cp base $FILE 
+
+echo "<cert>" >> $FILE
+sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p'  $EASYRSAPATH/easyrsa3/pki/issued/$NAME.crt >> $FILE
+echo "</cert>" >> $FILE
+
+echo "<key>" >> $FILE
+sed -n '/-----BEGIN PRIVATE KEY-----/,/-----END PRIVATE KEY-----/p'  $EASYRSAPATH/easyrsa3/pki/private/$NAME.key >> $FILE
+echo "</key>" >> $FILE
+
+echo "<ca>" >> $FILE
+sed -n '/-----BEGIN CERTIFICATE-----/,/-----END CERTIFICATE-----/p'  $EASYRSAPATH/easyrsa3/pki/ca.crt >> $FILE
+echo "</ca>" >> $FILE
+
+echo "<tls-auth>" >> $FILE
+sed -n '/-----BEGIN OpenVPN Static key V1-----/,/-----END OpenVPN Static key V1-----/p'  ta.key >> $FILE
+echo "</tls-auth>" >> $FILE
